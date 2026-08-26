@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blend</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="heading">Blend...</div>
+    <div id="upload_container">
+        <div>
+        <div class="upload_box" id="source_upload">
+            <div class="upload-icon">📁</div>
+            <div class="upload-title">Drop source image here</div>
+            <div class="upload-subtitle">or click to browse</div>
+            <input type="file" id="source_image" accept="image/*" hidden>
+        </div>
+        <div class="preview" id="source_preview">
+        <canvas class = "image_canvas" id = "source_canvas"></canvas>
+        <canvas class="drawing_canvas" id="drawing_canvas"></canvas>
+        </div>
+        </div>
+        <div>
+        <div class="upload_box" id="target_upload">
+            <div class="upload-icon">📁</div>
+            <div class="upload-title">Drop target image here</div>
+            <div class="upload-subtitle">or click to browse</div>
+            <input type="file" id="target_image" accept="image/*" hidden>
+
+        </div>
+        <div class="preview" id="target_preview">
+        <canvas class = "image_canvas" id = "target_canvas"></canvas>
+        </div>
+        </div>
+        
+        
+        
+    </div>
+    <div class="algorithm_selection" id="algorithm_selection">
+
+    <label class="algorithm_option">
+        <input type="radio" name="algorithm" value="poisson">
+        <span>Poisson Editing</span>
+    </label>
+
+    <label class="algorithm_option">
+        <input type="radio" name="algorithm" value="laplacian">
+        <span>Laplacian Pyramid</span>
+    </label>
+
+</div>
+    <div class="buttons_wrap">
+        <button type = "submit" class = "buttons" id = "mask_btn">Create Mask</button>
+        <button type = "reset" class = "buttons" id = "retry_btn">Retry</button>
+        <button type = "submit" class = "buttons" id = "continue_btn">Continue</button>
+        <button type = "submit" class = "buttons" id = "blend_btn">Blend</button>
+    </div>
+    
+<div id="result_container">
+    <img id="result_image" alt="Blended image">
+
+    <button class = "buttons" id="download_btn">
+        Download Image
+    </button>
+</div>
+
+    <script src="load.js"></script>
+    <script src="draw.js"></script>
+    <script src="mask.js"></script>
+    <script src="place.js"></script>
+    <script src="output.js"></script>
+
+</body>
+
+</html>

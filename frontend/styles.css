@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: rgb(189, 114, 207);
+}
+
+.heading {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    color: rgba(92, 2, 128, 0.767);
+}
+
+#upload_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.upload_box {
+    width: 35vw;
+    height: 35vw;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 3px dashed rgba(33, 1, 41, 0.5);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: 0.2s;
+
+}
+
+.upload_box:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: rgb(102, 2, 128);
+}
+
+.upload_box.dragover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: rgb(102, 2, 128);
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 3rem;
+}
+
+.upload-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.upload-subtitle {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.preview {
+    width: 30vw;
+    height: 30vw;
+
+    position: relative;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.image_canvas,
+.drawing_canvas,
+.selected_canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.drawing_canvas {
+    position: absolute;
+}
+
+.buttons_wrap {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10rem;
+    
+}
+
+.buttons {
+    display: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+
+    padding: 1rem;
+    border: 2px solid rgba(102, 2, 128, 0.25);
+    border-radius: 1.5rem;
+
+    background: rgb(230, 190, 238);
+    color: rgb(102, 2, 128);
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(102, 2, 128, 0.2);
+
+    transition: 0.2s ease;
+}
+
+.buttons:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 7px 14px rgba(102, 2, 128, 0.25);
+}
+
+.buttons:active {
+    transform: translateY(0.25rem);
+}
+
+.selected_canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#retry_btn{
+    display: none;
+}
+
+#continue_btn{
+    display: none;
+}
+
+.selected_canvas {
+    position: absolute;
+    cursor: grab;
+}
+
+.algorithm_selection {
+    display: none;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    font-family: 'Nunito', sans-serif;
+}
+
+.algorithm_option {
+    padding: 0.8rem 1.5rem;
+
+    border: 2px solid rgba(102, 2, 128, 0.25);
+    border-radius: 1.5rem;
+
+    background: rgb(230, 190, 238);
+    color: rgb(102, 2, 128);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(102, 2, 128, 0.2);
+
+    transition: 0.2s ease;
+}
+
+.algorithm_option input {
+    display: none;
+}
+
+.algorithm_option:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 7px 14px rgba(102, 2, 128, 0.25);
+}
+
+/* Selected algorithm */
+.algorithm_option:has(input:checked) {
+    background: rgb(139, 8, 172);
+    color: white;
+
+    border-color: rgb(116, 1, 145);
+
+    box-shadow: 0 5px 12px rgba(102, 2, 128, 0.3);
+}
+
+#result_container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+#result_image {
+    max-width: 80vw;
+    max-height: 70vh;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 25px rgba(92, 2, 128, 0.25);
+}
+
+.target_stage {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.image_canvas {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.selected_canvas {
+    position: absolute;
+
+    max-width: none;
+    max-height: none;
+
+    cursor: grab;
+}
